@@ -1,6 +1,18 @@
 # star-ID-graph-match
 Source Code of "An Accurate Star Identification Approach Based on Spectral Graph Matching for Attitude Measurement of Spacecraft"
 
+```
+@article{you2022accurate,
+  title={An accurate star identification approach based on spectral graph matching for attitude measurement of spacecraft},
+  author={You, Zhiyuan and Li, Junzheng and Zhang, Hongcheng and Yang, Bo and Le, Xinyi},
+  journal={Complex & Intelligent Systems},
+  volume={8},
+  number={2},
+  pages={1639--1652},
+  year={2022}
+}
+```
+
 ## Qucik Start
 
 - Convert SAO star catalog to txt format 
