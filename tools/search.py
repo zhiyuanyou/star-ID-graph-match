@@ -10,6 +10,7 @@ by Zhiyuan You
 """
 
 
+import argparse
 import glob
 import numpy as np
 import joblib
@@ -22,6 +23,7 @@ from utils.search.graph_helper import gen_graph
 from utils.common.mst_helper import gen_mst
 from utils.search.k_vector_helper import search_k_vector
 from utils.search.match_helper import match_graph
+from utils.noise_helper import add_noise
 
 
 # CN: CatalogNumber
@@ -38,7 +40,13 @@ from utils.search.match_helper import match_graph
 # _thre: threshold
 
 
-def search(filepaths, k_vector_q_m, graph_list, para, visualization=False):
+parser = argparse.ArgumentParser(description="Noise Setting")
+parser.add_argument("--std_position", type=float, default=0)
+parser.add_argument("--num_lost", type=int, default=0)
+parser.add_argument("--num_false", type=int, default=0)
+
+
+def search(filepaths, k_vector_q_m, graph_list, para, args, visualization=False):
     num_fail = 0
     num_right = 0
     num_wrong = 0
@@ -51,12 +59,12 @@ def search(filepaths, k_vector_q_m, graph_list, para, visualization=False):
         CN_ms = int(lines[0].strip().split()[0])
         print(f"Handling star {CN_ms}")
 
+        # add noise
+        lines = add_noise(lines, args, para)
         # select R
         lines_out = select_R_AD(lines, para)
-
         # generate graph
         graph = gen_graph(lines_out, para)
-
         # generate mst
         graph, _ = gen_mst(graph)
 
@@ -116,6 +124,8 @@ def search(filepaths, k_vector_q_m, graph_list, para, visualization=False):
 
 
 if __name__ == "__main__":
+    args = parser.parse_args()
+
     # simulation parameter
     para = EasyDict({})
     # hyper parameter
@@ -150,4 +160,4 @@ if __name__ == "__main__":
     k_vector, q, m = joblib.load("./database/k_vector_q_m.pkl")
     graph_list = joblib.load("./database/graph_list.pkl")
 
-    search(filepaths, [k_vector, q, m], graph_list, para)
+    search(filepaths, [k_vector, q, m], graph_list, para, args)
