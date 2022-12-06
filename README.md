@@ -1,10 +1,22 @@
 # star-ID-graph-match
 Source Code of "An Accurate Star Identification Approach Based on Spectral Graph Matching for Attitude Measurement of Spacecraft"
 
+## Qucik Start
 
-### TODO List
-- [x] Convert SAO star catalog to txt format, by running `sh scripts/convert.sh`.
-- [x] Simulate to generate star image, by running `sh scripts/simulate.sh`.
-- [x] Generate database, by running `sh scripts/gen_database.sh`.
-- [x] Search to identifify star (with no noise), by running `sh scripts/search.sh`.
-- [ ] Add noise
+- Convert SAO star catalog to txt format 
+
+  `sh scripts/convert.sh`
+
+- Simulate to generate star images
+
+  `sh scripts/simulate.sh`
+  
+- Generate database
+
+  `sh scripts/gen_database.sh`
+
+- Search to identifify star with noise
+
+  `sh scripts/search.sh #STD_POSITION_NOISE #NUM_LOST_STAR #NUM_FALSE_STAR`
+  
+  *i.e.*, `sh scripts/search.sh 3.0 1 0` means the std of positon noise is 3.0, lost star number is 1, and false star number is 0.
