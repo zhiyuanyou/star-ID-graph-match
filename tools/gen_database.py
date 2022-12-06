@@ -16,7 +16,7 @@ from easydict import EasyDict
 
 from utils.database.select_R_AD_helper import select_R_AD
 from utils.database.graph_helper import gen_graph
-from utils.database.mst_helper import gen_mst
+from utils.common.mst_helper import gen_mst
 from utils.database.k_vector_helper import gen_k_vertor
 from utils.vis_helper import vis_lines, vis_graph, vis_mst
 

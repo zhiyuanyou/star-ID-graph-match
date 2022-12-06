@@ -8,8 +8,9 @@ generated for a rough search. That's why the sum of the AD(angular distance)
 in the mst is calculated.
 
 Written in 2020.01.26, revised in 2022.12.06
-by YouZhiyuan
+by Zhiyuan You
 """
+
 
 # CN: CatalogNumber
 # VM: VisualMagnitude
