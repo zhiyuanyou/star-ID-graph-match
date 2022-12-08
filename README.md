@@ -56,3 +56,11 @@ Source Code of "An Accurate Star Identification Approach Based on Spectral Graph
   - *k_vector_helper.py*
   
     **Difference**. The script under `utils/database` constructs *K-Vector Range Search Model*, while the script under `utils/search` searches using the constructed *Search Model*. 
+
+## Simulator UI
+
+- We provide a simulator UI to generate star images
+  
+  `sh scripts/run_panel.sh`
+
+![Image text](docs/PanelUI.jpg)
