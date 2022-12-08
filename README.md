@@ -12,6 +12,8 @@ Source Code of "An Accurate Star Identification Approach Based on Spectral Graph
   year={2022}
 }
 ```
+![Image text](docs/star-ID.jpg)
+
 
 ## Qucik Start
 
