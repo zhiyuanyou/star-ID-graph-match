@@ -1,3 +1,12 @@
+# Python
+Python==3.6.13
+
+# pip packages
+easydict==1.10
 joblib==1.1.1
+matplotlib==3.3.4
 numpy==1.19.2
 opencv-python==4.6.0.66
+PyQt5==5.15.6
+PyQt5-Qt5==5.15.2
+PyQt5-sip==12.9.1
